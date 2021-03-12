@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev docs",
+    "dev": "vuepress dev docs --temp .temp",
     "build": "vuepress build docs",
     "deploy": "bash deploy.sh"
   },
@@ -12,6 +12,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vuepress": "^1.8.2"
+    "@vuepress/plugin-back-to-top": "^1.8.2",
+    "markdown-it-disable-url-encode": "^1.0.1",
+    "moment": "^2.29.1",
+    "vuepress": "^1.8.2",
+    "vuepress-theme-reco": "^1.6.6"
   }
 }
