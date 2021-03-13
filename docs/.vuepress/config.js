@@ -38,7 +38,7 @@ module.exports = {
       nav:[
         { text: '主页', link: '/', icon: 'reco-home' },
         { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
-        { text: '随笔', link: '/algorithm/' }, // 内部链接 以docs为根目录
+        { text: '随笔', link: '/notes/', icon: 'reco-document' }, // 内部链接 以docs为根目录
         // { 
         //   text: '目录索引',
         //   items: [
