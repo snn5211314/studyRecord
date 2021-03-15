@@ -18,6 +18,7 @@ module.exports = {
       type: 'blog',
       logo: '/assets/img/logo.png',
       huawei: false,
+      noFoundPageByTencent: false, // 关闭腾讯公益
       author: 'dreamer_zt',
       subSidebar: 'auto',
       authorAvatar: '/assets/img/logo.png',
@@ -67,7 +68,7 @@ module.exports = {
           "title": "午后南杂",
           "desc": "一款简洁而优雅的 vuepress 博客 & 文档 主题。",
           "email": "无",
-          "link": "https://vuepress-theme-reco.recoluan.com/"
+          "link": "https://www.recoluan.com/"
         }
       ]
     },
