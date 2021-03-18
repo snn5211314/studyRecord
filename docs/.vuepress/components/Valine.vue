@@ -16,8 +16,9 @@ export default {
     el: '#vcomments' ,
     appId: 'CQSqf0WhbtR47sgxcJFb7GwA-gzGzoHsz',
     appKey: 'qslePIFULV0L3rBl1LuCUWTT',
-    notify:false, 
-    verify:true, 
+    notify: false, 
+    verify: false, 
+    visitor: true,
     avatar:'mp', 
     placeholder: '请开始你的表演' 
   });
