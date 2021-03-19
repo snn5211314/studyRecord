@@ -53,8 +53,7 @@
       </div>
     </div>
     <div class="bottom-border" v-show="choosenItemIndex != -1">
-      <p
-        class="title">style of item-{{choosenItemIndex+1}}</p>
+      <p class="title">style of item-{{choosenItemIndex+1}}</p>
       <div class="language-css extra-class">
         <pre class="language-css"><code ref="flexItem"></code></pre>
       </div>
@@ -88,6 +87,7 @@
 </template>
 
 <script>
+  import Prism from 'prismjs'
   export default {
     name: 'flex',
     data() {
@@ -166,36 +166,36 @@
         return arr
       },
     },
-    created() {
-      import('prismjs/prism').then(module => {
-        this.Prism = module
-      })
+    mounted() {
+      this.setContainerStyleStr()
+      this.changeItemCss(this.itemStyles[0], 0)
     },
     methods: {
       styleToString(style) {
         let styleStr = ''
         for (let key in style) {
-          styleStr += `${key}: ${style[key]};\n`
+          if (key === 'align-content') {
+            styleStr += `${key}: ${style[key]};`
+          } else {
+            styleStr += `${key}: ${style[key]};\n`
+          }
         }
         return styleStr
       },
       setContainerStyleStr() {
-        this.$refs['flexContainer'].innerHTML = this.Prism.highlight(this.styleToString(this.containerStyle), this.Prism.languages.css)
+        this.$refs['flexContainer'].innerHTML = Prism.highlight(this.styleToString(this.containerStyle), Prism.languages.css)
       },
       changeItemCss(style, index) {
-        this.$refs['flexItem'].innerHTML = this.Prism.highlight(this.styleToString(style), this.Prism.languages.css)
+        this.$refs['flexItem'].innerHTML = Prism.highlight(this.styleToString(style), Prism.languages.css)
         this.choosenItem = style
         this.choosenItemIndex = index
       }
-    },
-    mounted() {
-      this.setContainerStyleStr()
     }
   }
 </script>
 
 
-<style scoped lang="sass">
+<style scoped lang="scss">
   .live-flex {
     .tip {
       font-size: 14px;
