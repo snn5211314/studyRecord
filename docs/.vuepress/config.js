@@ -3,7 +3,7 @@ const moment = require('moment');
 module.exports = {
     theme: 'reco',
     dest: 'blog',
-    title: '流砂纵横',
+    title: '流沙纵横',
     description: '放弃不难，但是坚持一定很酷。',
     logo: '/assets/img/logo.png',
     // 注入到当前页面的 HTML <head> 中的标签
@@ -37,13 +37,6 @@ module.exports = {
         { text: '主页', link: '/', icon: 'reco-home' },
         { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
         { text: '随笔', link: '/notes/', icon: 'reco-document' }, // 内部链接 以docs为根目录
-        // { 
-        //   text: '目录索引',
-        //   items: [
-        //     { text: 'Vue', link: '/vue/mvvm原理' }
-        //   ]
-        // }, // 外部链接
-        // 下拉列表
         {
           text: 'GitHub',
           icon: 'reco-github',
@@ -78,32 +71,32 @@ module.exports = {
           moment.locale(lang)
           return moment(timestamp).fromNow()
         }
-      }],
-      [
-        require('./plugins/BgMusic'),
-        {
-          audios: [
-            {
-              name: '能够成家吗',
-              artist: '咖啡少年',
-              url: 'https://assets.smallsunnyfox.com/music/1.mp3',
-              cover: 'https://assets.smallsunnyfox.com/music/1.jpg'
-            },
-            {
-              name: '江南地铁站4号出口',
-              artist: 'Plastic / Fallin` Dild',
-              url: 'https://assets.smallsunnyfox.com/music/2.mp3',
-              cover: 'https://assets.smallsunnyfox.com/music/2.jpg'
-            },
-            {
-              name: '用胳膊当枕头',
-              artist: '최낙타',
-              url: 'https://assets.smallsunnyfox.com/music/3.mp3',
-              cover: 'https://assets.smallsunnyfox.com/music/3.jpg'
-            }
-          ]
-        }
-      ]
+      }]
+      // [
+      //   require('./plugins/BgMusic'),
+      //   {
+      //     audios: [
+      //       {
+      //         name: '能够成家吗',
+      //         artist: '咖啡少年',
+      //         url: 'https://assets.smallsunnyfox.com/music/1.mp3',
+      //         cover: 'https://assets.smallsunnyfox.com/music/1.jpg'
+      //       },
+      //       {
+      //         name: '江南地铁站4号出口',
+      //         artist: 'Plastic / Fallin` Dild',
+      //         url: 'https://assets.smallsunnyfox.com/music/2.mp3',
+      //         cover: 'https://assets.smallsunnyfox.com/music/2.jpg'
+      //       },
+      //       {
+      //         name: '用胳膊当枕头',
+      //         artist: '최낙타',
+      //         url: 'https://assets.smallsunnyfox.com/music/3.mp3',
+      //         cover: 'https://assets.smallsunnyfox.com/music/3.jpg'
+      //       }
+      //     ]
+      //   }
+      // ]
     ],
     markdown: {
       lineNumbers: true, // 代码块显示行号
