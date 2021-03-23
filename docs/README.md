@@ -1,13 +1,13 @@
 ---
 home: true
-heroImage: /assets/img/logo.png
+heroImage: logo.png
 heroImageStyle: {
   borderRadius: '50%'
 }
 bgImageStyle: {
   height: '500px'
 }
-actionText: 快速上手 →
-actionLink: /zh/guide/
+actionText: 开始 →
+actionLink: /blog/
 isShowTitleInHome: true
 ---

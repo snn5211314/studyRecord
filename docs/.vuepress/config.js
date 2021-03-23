@@ -1,40 +1,58 @@
-const moment = require('moment');
+var sideBar = require('./config/sideBar');
 
 module.exports = {
     theme: 'reco',
     dest: 'blog',
     title: '流沙纵横',
     description: '放弃不难，但是坚持一定很酷。',
-    logo: '/assets/img/logo.png',
     // 注入到当前页面的 HTML <head> 中的标签
     head: [
-        ['link', { rel: 'icon', href: '/assets/img/logo.png' }], // 增加一个自定义的 favicon(网页标签的图标)
+        ['link', { rel: 'icon', href: 'logo.png' }], // 增加一个自定义的 favicon(网页标签的图标)
     ],
-    base: '/', 
+    base: '/blog/', 
     themeConfig: {
-      type: 'blog',
-      logo: '/assets/img/logo.png',
-      huawei: false,
       noFoundPageByTencent: false, // 关闭腾讯公益
       author: 'dreamer_zt',
       subSidebar: 'auto',
-      authorAvatar: '/assets/img/logo.png',
+      authorAvatar: 'logo.png',
       searchMaxSuggestions: 10, // 搜索出来的结果条数
       smoothScroll: true, // 页面滚动
-      blogConfig: {
-        category: {
-          location: 2,     // 在导航栏菜单中所占的位置，默认2
-          text: 'Category' // 默认文案 “分类”
-        },
-        tag: {
-          location: 3,     // 在导航栏菜单中所占的位置，默认3
-          text: 'Tag'      // 默认文案 “标签”
-        }
-      },
-      sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
+      // blogConfig: {
+      //   category: {
+      //     location: 2,     // 在导航栏菜单中所占的位置，默认2
+      //     text: 'Category' // 默认文案 “分类”
+      //   },
+      //   tag: {
+      //     location: 3,     // 在导航栏菜单中所占的位置，默认3
+      //     text: 'Tag'      // 默认文案 “标签”
+      //   }
+      // },
+      // sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
       lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
       nav:[
         { text: '主页', link: '/', icon: 'reco-home' },
+        {
+          text: "指南",
+          ariaLabel: "了解更多",
+          items: [
+            {
+              items: [
+                {
+                  text: "leetcode解题",
+                  link: "/leetcode/",
+                }
+              ]
+            },
+            {
+              items: [
+                {
+                  text: "博客",
+                  link: "/blog/",
+                }
+              ]
+            }
+          ]
+        },
         { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
         { text: '随笔', link: '/notes/', icon: 'reco-document' }, // 内部链接 以docs为根目录
         {
@@ -45,7 +63,12 @@ module.exports = {
           ]
         }        
       ],
-      sidebar: {},
+      sidebar: {
+        "/notes/": sideBar.getNotes(),
+        // "/vue/": getVue("mini-vue", "vue3.0"),
+        "/leetcode/": sideBar.getLeetcode("简单", "中等", "困难", "面试真题"),
+        "/blog/": sideBar.getBlog("JS", "CSS", "HTML", "其它"),
+      },
       friendLink: [
         {
           "title": "Lucifer",
@@ -63,7 +86,7 @@ module.exports = {
       ]
     },
     plugins: [
-      ['@vuepress/back-to-top', true]
+      // ['@vuepress/back-to-top', true]
       ['@vuepress/last-updated', {
         transformer: (timestamp, lang) => {
           // 不要忘了安装 moment

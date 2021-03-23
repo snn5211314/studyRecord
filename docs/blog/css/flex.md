@@ -11,7 +11,7 @@ tags:
 
 采用 Flex 布局的元素，称为 Flex 容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称"项目"
 
-<img :src="$withBase('/assets/img/css/flex.png')" alt="flex">
+![flex](./images/flex/flex.png)
 
 容器默认存在两根轴：水平的主轴（**main axis**）和垂直的交叉轴（**cross axis**）。主轴的开始位置（与边框的交叉点）叫做**main start**，结束位置叫做**main end**；交叉轴的开始位置叫做**cross start**，结束位置叫做**cross end**。
 
@@ -82,7 +82,8 @@ tags:
       align-items: flex-start | flex-end | center | baseline | stretch;
     }
   ```
-<img :src="$withBase('/assets/img/css/align-item.png')" alt="flex">
+![align-item](./images/flex/align-item.png)
+
 
   - 6. align-content 属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用
     - flex-start：与交叉轴的起点对齐。
@@ -96,7 +97,7 @@ tags:
       align-content: flex-start | flex-end | center | space-between | space-around | stretch;
     }
   ```
-<img :src="$withBase('/assets/img/css/align-content.png')" alt="flex">
+![align-content](./images/flex/align-content.png)
 
 
 ## 项目的属性
@@ -106,7 +107,7 @@ tags:
       order: <integer>;
     }
   ```
-<img :src="$withBase('/assets/img/css/order.png')" alt="flex">
+![order](./images/flex/order.png)
 
   - 2.flex-grow  定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
   ``` css
@@ -114,7 +115,7 @@ tags:
       flex-grow: <number>; /* default 0 */
     }
   ```
-<img :src="$withBase('/assets/img/css/flex-grow.png')" alt="flex">
+![flex-grow](./images/flex/flex-grow.png)
 
   - 3.flex-shrink 定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
   ``` css
@@ -122,7 +123,7 @@ tags:
       flex-shrink: <number>; /* default 1 */
     }
   ```
-<img :src="$withBase('/assets/img/css/flex-shrink.jpg')" alt="flex">
+![flex-shrink](./images/flex/flex-shrink.jpg)
   - 4.flex-basis
   
   ``` css
@@ -146,8 +147,4 @@ tags:
       }
     ```
 
-<img :src="$withBase('/assets/img/css/align-self.png')" alt="flex">
-
-
-
-<Valine></Valine>
+![align-self](./images/flex/align-self.png)

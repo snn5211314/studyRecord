@@ -20,7 +20,7 @@ tags:
     
   执行时机是在周期末尾 <br/>
 
-<img :src="$withBase('/assets/img/js/延迟防抖.png')" alt="延迟防抖" />
+![延迟防抖](./images/延迟防抖.png)
   
   ``` js
     // 消耗比较大，函数每次都会执行，定时器在wait周期中，每次调用都会清除和重新生成
@@ -43,7 +43,7 @@ tags:
 
   执行时机是在周期的开始 <br/>
 
-<img :src="$withBase('/assets/img/js/前缘防抖.png')" alt="前缘防抖" />  
+![前缘防抖](./images/前缘防抖.png)
 
   ``` js
     function debounce(fn, wait) {
