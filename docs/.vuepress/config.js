@@ -5,9 +5,8 @@ module.exports = {
     dest: 'blog',
     title: '流沙纵横',
     description: '放弃不难，但是坚持一定很酷。',
-    // 注入到当前页面的 HTML <head> 中的标签
     head: [
-        ['link', { rel: 'icon', href: 'logo.png' }], // 增加一个自定义的 favicon(网页标签的图标)
+        ['link', { rel: 'icon', href: 'logo.png' }],
     ],
     base: '/blog/', 
     themeConfig: {
@@ -27,7 +26,6 @@ module.exports = {
       //     text: 'Tag'      // 默认文案 “标签”
       //   }
       // },
-      // sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
       lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
       nav:[
         { text: '主页', link: '/', icon: 'reco-home' },
@@ -86,15 +84,6 @@ module.exports = {
       ]
     },
     plugins: [
-      // ['@vuepress/back-to-top', true]
-      ['@vuepress/last-updated', {
-        transformer: (timestamp, lang) => {
-          // 不要忘了安装 moment
-          const moment = require('moment')
-          moment.locale(lang)
-          return moment(timestamp).fromNow()
-        }
-      }]
       // [
       //   require('./plugins/BgMusic'),
       //   {

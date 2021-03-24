@@ -4,12 +4,16 @@ function getLeetcode(groupA, groupB, groupC, groupD) {
     {
       title: groupA,
       collapsable: true,
-      children: [],
+      children: [
+        "docs/simple/01-liangshuzhihe"        
+      ],
     },
     {
       title: groupB,
       collapsable: true,
-      children: [],
+      children: [
+        "docs/middle/07-zhengshufanzhuan"
+      ],
     },
     {
       title: groupC,
