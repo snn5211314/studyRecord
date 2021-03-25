@@ -5,15 +5,16 @@ function getLeetcode(groupA, groupB, groupC, groupD) {
       title: groupA,
       collapsable: true,
       children: [
-        "docs/simple/01-liangshuzhihe"        
+        "docs/simple/01-liangshuzhihe",
+        "docs/simple/07-zhengshufanzhuan",
+        "docs/simple/09-huiwenshu",
+        "docs/simple/13-luomashuzuzhuanzhengshu"  
       ],
     },
     {
       title: groupB,
       collapsable: true,
-      children: [
-        "docs/middle/07-zhengshufanzhuan"
-      ],
+      children: [],
     },
     {
       title: groupC,
@@ -51,17 +52,21 @@ function getBlog(groupA, groupB, groupC, groupD, groupE) {
         }
       ]
     },
-    // {
-    //   title: groupB,
-    //   collapsable: false,
-    //   children: ["HTTP/TCP"],
-    // },
     {
       title: groupB,
       collapsable: true,
       children: [
         "css/flex",
       ]
+    },
+    {
+    title: groupC,
+    collapsable: true,
+    children: [
+      'ts/',
+      'ts/01-zhunbei',
+      'ts/02-jichu'
+    ],
     },
     {
       title: groupD,

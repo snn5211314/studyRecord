@@ -20,7 +20,7 @@ tags:
 
 ## 对象映射实现
 
-![两数之和](../images/两数之和.gif)
+![两数之和](../../images/两数之和.gif)
 
 ``` js
 var twoSum = function(nums, target) {

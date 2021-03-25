@@ -65,7 +65,7 @@ module.exports = {
         "/notes/": sideBar.getNotes(),
         // "/vue/": getVue("mini-vue", "vue3.0"),
         "/leetcode/": sideBar.getLeetcode("简单", "中等", "困难", "面试真题"),
-        "/blog/": sideBar.getBlog("JS", "CSS", "HTML", "其它"),
+        "/blog/": sideBar.getBlog("JS", "CSS", "TS", "HTML", "其它"),
       },
       friendLink: [
         {
