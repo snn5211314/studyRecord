@@ -1,6 +1,6 @@
 ---
 title: 基础
-date: 2021-03-125
+date: 2021-03-25
 ---
 
 ## 原始数据类型
@@ -97,3 +97,118 @@ date: 2021-03-125
 
   // Type 'void' is not assignable to type 'number'.
   ```
+
+## 任意值
+  任意值（Any）用来表示允许赋值为任意类型。
+
+  普通类型的变量，在赋值过程中是不被允许修改的
+  ``` js
+  let name1: string = 'tom'
+  name1 = 77  // Type '77' is not assignable to type 'string'.
+  ```
+  但如果是any，则被允许修改：
+  ``` js
+  let name1: any = 'tom'
+  name1 = 77 
+  ```
+  **属性和方法**
+  可以在任意值上访问任何属性和方法
+  ```js
+  // 访问属性
+  let anyThing: any = 'hello';
+  console.log(anyThing.myName);
+  console.log(anyThing.myName.firstName);
+
+  // 访问方法
+  let anyThing: any = 'Tom';
+  anyThing.setName('Jerry');
+  anyThing.setName('Jerry').sayHello();
+  anyThing.myName.setFirstName('Cat');
+  ```
+
+  **声明一个变量为任意值之后，对它的任何操作，返回的内容的类型都是任意值。**
+
+  **未声明类型的变量**
+  变量如果在声明的时候，未指定其类型，那么它会被识别为任意值类型：
+  ```js
+  let something;
+  something = 'seven';
+  something = 7;
+
+  something.setName('Tom');
+
+  // 等价于
+  let something: any;
+  something = 'seven';
+  something = 7;
+
+  something.setName('Tom');
+  ```
+
+## 类型推导
+如果没有明确的指定类型，那么 TypeScript 会依照类型推论（Type Inference）的规则推断出一个类型。
+
+```js
+let a = 'tom'
+a = 7 // Type '7' is not assignable to type 'string'.
+
+// 等价于 
+let a: string = 'tom'
+a = 7 // 数值类型不能赋值改字符串类型
+```
+
+在没有明确变量的类型时候，TypeScript 会自动推导出该变量的类型
+
+**如果定义的时候没有赋值，不管之后有没有赋值，都会被推断成 any 类型而完全不被类型检查**：
+```js
+let something;
+something = 'seven';
+something = 7;
+
+something.setName('Tom');
+```
+
+## 联合类型
+联合类型表示取值可以为多种类型中的一种。使用 `|` 分隔每个类型。
+```js
+let myLoveNumber: string | number;
+myLoveNumber = 6;
+myLoveNumber = 'six';
+
+myLoveNumber = true; // error
+
+// Type 'boolean' is not assignable to type 'string | number'.
+// Type 'boolean' is not assignable to type 'number'.
+```
+上边例子说明，`myLoveNumber` 可以是 `string` 或 `number` ，但是不能为其他类型。
+
+**访问联合类型的属性或方法**
+当 TypeScript 不确定一个联合类型的变量到底是哪个类型的时候，我们**只能访问此联合类型的所有类型里共有的属性或方法：**
+
+```js
+function getLength(something: string | number): number {
+  return something.length;
+}
+
+//   Property 'length' does not exist on type 'number'.
+```
+在上边例子中，`length` 不是 `string` 和 `number` 的共有属性，所以报错了。
+但是访问共有属性是没有问题的：
+
+```js
+function getLength(something: string | number): number {
+  return something.toString();
+}
+```
+
+**联合类型的变量在被赋值的时候，会根据类型推论的规则推断出一个类型：**
+
+```js
+let myFavoriteNumber: string | number; // 声明变量myFavoriteNumber是可以为string或number类型
+myFavoriteNumber = 'seven'; // 赋值字符串，ts中类型推论成变量是string类型
+console.log(myFavoriteNumber.length); // 5 正常获取字符串类型的属性
+myFavoriteNumber = 7; // 赋值数字，ts中类型推论成变量是number类型
+console.log(myFavoriteNumber.length);  // 访问number类型的属性报错，因为没有length属性
+
+// Property 'length' does not exist on type 'number'.
+```

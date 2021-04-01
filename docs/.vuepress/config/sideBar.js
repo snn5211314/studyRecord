@@ -65,7 +65,8 @@ function getBlog(groupA, groupB, groupC, groupD, groupE) {
     children: [
       'ts/',
       'ts/01-zhunbei',
-      'ts/02-jichu'
+      'ts/02-jichu',
+      'ts/03-yinyong'
     ],
     },
     {
