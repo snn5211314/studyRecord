@@ -4,7 +4,7 @@ date: 2021-04-1
 ---
 
 ## 引用类型
-  ## 对象的类型——接口
+  ### 对象的类型——接口
   在TypeScript中，我们使用接口（interface）定义对象的类型。
   ```js
   interface Person {
@@ -119,3 +119,34 @@ date: 2021-04-1
 
   tom.id = 89757; // 报错，只读属性不让赋值
   ```
+
+  ### 数组类型
+  在TypeScript中，数组类型有多种定义方式：
+  **[类型 + 方括号]**
+  ```js
+  let numberArr: number[] = [1, 2, 3, 4, 5]
+  ```
+  数组中的项**不允许**出现其他的类型：
+  ```js
+  // error  Type 'string' is not assignable to type 'number'.
+  let numberArr: number[] = [1, 2, '3', 4, 5]
+
+  // 或者这样
+  let numberArr: number[] = [1, 2, 3, 4, 5]
+  // error  Argument of type '"8"' is not assignable to parameter of type 'number'.
+  numberArr.push('6')
+  ```
+  **数组泛型**
+  可以使用数组泛型`Array<elemType>`来表示数组
+  ```js
+  let numberArr: Array<number> = [1, 2, 3, 4, 5]
+  ```
+  **接口表示数组**
+  ```js
+  interface NumberArray {
+    [index: number]: number;
+  }
+  let numberArr: NumberArray = [1, 1, 2, 3, 5];
+  ```
+
+  ### 函数的类型

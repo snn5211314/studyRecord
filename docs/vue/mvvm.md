@@ -7,7 +7,7 @@ tags:
 ---
 <!-- more -->
 
-<img :src="$withBase('/assets/img/vue/Vue响应式.png')" alt="nginx编码">
+![Vue响应式](./images/Vue响应式.png)
 
 ### 1. `Compile`
 
