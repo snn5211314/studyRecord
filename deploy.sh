@@ -9,19 +9,13 @@ yarn build
 # 进入生成的文件夹
 cd blog
 
-# 如果是发布到自定义域名
-# echo 'www.example.com' > CNAME
-
 git init
 git add -A
-git commit -m 'deploy'
-
-# 如果发布到 https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
-# git push -f git@github.com/snn5211314/recode.github.io.git master
-git push -f git@github.com/snn5211314/web-learn.git master
+git commit -m '文件合并'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
+git push -f git@github.com:snn5211314/vuepress.git master:gh-pages
+# 推送到远端
+git push -f git@121.40.18.180:/home/www/website/vuepress/blog.git master
 
 cd -

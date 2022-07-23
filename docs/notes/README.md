@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /assets/img/logo.png
+heroImage: logo.png
 heroImageStyle: {
   borderRadius: '50%'
 }

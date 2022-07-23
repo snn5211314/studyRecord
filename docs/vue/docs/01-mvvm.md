@@ -7,7 +7,7 @@ tags:
 ---
 <!-- more -->
 
-![Vue响应式](./images/Vue响应式.png)
+![Vue响应式](../images/Vue响应式.png)
 
 ### 1. `Compile`
 

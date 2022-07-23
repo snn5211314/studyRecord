@@ -1,5 +1,5 @@
 // leetcode笔记
-function getLeetcode(groupA, groupB, groupC, groupD) {
+function getLeetcode (groupA, groupB, groupC, groupD) {
   return [
     {
       title: groupA,
@@ -8,7 +8,7 @@ function getLeetcode(groupA, groupB, groupC, groupD) {
         "docs/simple/01-liangshuzhihe",
         "docs/simple/07-zhengshufanzhuan",
         "docs/simple/09-huiwenshu",
-        "docs/simple/13-luomashuzuzhuanzhengshu"  
+        "docs/simple/13-luomashuzuzhuanzhengshu"
       ],
     },
     {
@@ -30,11 +30,11 @@ function getLeetcode(groupA, groupB, groupC, groupD) {
 }
 
 
-function getNotes() {
+function getNotes () {
   return []
 }
 
-function getBlog(groupA, groupB, groupC, groupD, groupE) {
+function getBlog (groupA, groupB, groupC, groupD, groupE) {
   return [
     {
       title: groupA,
@@ -44,10 +44,10 @@ function getBlog(groupA, groupB, groupC, groupD, groupE) {
           title: "JS基本功",
           collapsable: true,
           children: [
-            "js/01-gaojiehanshu",
-            "js/02-shuzuquchong",
-            "js/03-shuzupaixu",
-            "js/04-fangdoujieliu"
+            "js/01-high-order-function",
+            "js/02-array-deduplication",
+            "js/03-array-order",
+            "js/04-debounce-throttle"
           ]
         }
       ]
@@ -60,14 +60,14 @@ function getBlog(groupA, groupB, groupC, groupD, groupE) {
       ]
     },
     {
-    title: groupC,
-    collapsable: true,
-    children: [
-      'ts/',
-      'ts/01-zhunbei',
-      'ts/02-jichu',
-      'ts/03-yinyong'
-    ],
+      title: groupC,
+      collapsable: true,
+      children: [
+        'ts/',
+        'ts/01-zhunbei',
+        'ts/02-jichu',
+        'ts/03-yinyong'
+      ],
     },
     {
       title: groupD,
@@ -89,8 +89,26 @@ function getBlog(groupA, groupB, groupC, groupD, groupE) {
     }
   ];
 }
+
+function getVue (groupA, groupB) {
+  return [
+    {
+      title: groupA,
+      collapsable: true,
+      children: [
+        "docs/01-mvvm",
+      ],
+    }, {
+      title: groupB,
+      collapsable: true,
+      children: []
+    }
+  ]
+}
+
 module.exports = {
   getBlog,
   getNotes,
-  getLeetcode
+  getLeetcode,
+  getVue
 };
