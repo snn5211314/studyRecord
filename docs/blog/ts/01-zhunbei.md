@@ -1,6 +1,7 @@
 ---
 title: 准备
-date: 2021-03-125
+date: 2021-03-12
+categories: ts
 ---
 
 ### 准备

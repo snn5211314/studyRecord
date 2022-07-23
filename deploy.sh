@@ -11,7 +11,7 @@ cd blog
 
 git init
 git add -A
-git commit -m '文件合并'
+git commit -m '初始化数据，同步'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:snn5211314/vuepress.git master:gh-pages
